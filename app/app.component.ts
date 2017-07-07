@@ -6,13 +6,16 @@ import { Animal } from './animal.model';
   template: `
   <div class="page-header">
     <div class="container">
-      <h1>Zoo</h1>
-      <button class="btn btn-primary btn-sm" (click)="addButtonClicked()">Add Animal</button><br>
+      <h1>Zoo Animals</h1>
     </div>
   </div>
   <div class="container">
-    <list-animal [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></list-animal>
+    <list-animal [childAnimalList]="masterAnimalList"  (clickSender)="editAnimal($event)"></list-animal>
+    <h1>Edit</h1>
+    <hr>
     <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickSender)="finishedEditing()"></edit-animal>
+
+    <button class="btn btn-primary btn-sm" (click)="addButtonClicked()">Add Animal</button><br>
     <add-animal [childAddAnimal]="selectedAddAnimal" (newAnimalSender)='addAnimal($event)'></add-animal>
   </div>
   `
@@ -28,7 +31,6 @@ export class AppComponent {
 
   selectedAnimal: boolean = null;
   selectedAddAnimal: boolean = null;
-
 
   addButtonClicked() {
     this.selectedAddAnimal = true;
@@ -47,7 +49,4 @@ export class AppComponent {
     this.selectedAddAnimal = null;
     console.log(this.masterAnimalList);
   }
-
-
 }
-// (public species: string, public name: string, public age: number, public diet: string, public location: string, public caretakers: number, public sex: string, public like: string, public dislike: string)
