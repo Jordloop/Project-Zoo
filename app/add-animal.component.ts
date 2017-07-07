@@ -46,6 +46,7 @@ import { Animal } from './animal.model';
 })
 
 export class AddAnimalComponent {
+  @Input() childAddAnimal: Animal;
   @Output() newAnimalSender = new EventEmitter();
 
   sumbitForm(species: string, name: string, age: number, diet: string, location: string, caretakers: string, sex: string, likes: string, dislikes: string) {
@@ -53,7 +54,4 @@ export class AddAnimalComponent {
     console.log(newAnimal);
     this.newAnimalSender.emit(newAnimal);
   }
-
-// (newSpecies.value, newName.value, newAge.value, newDiet.value, newLocation.value, newCaretakers.value, newSex.value, newLikes.value, newDislikes.value)
-
 }
