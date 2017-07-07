@@ -10,7 +10,7 @@ import { Animal } from './animal.model';
   `
 })
 
-export class addAnimalComponent {
+export class AddAnimalComponent {
 
 
 }
