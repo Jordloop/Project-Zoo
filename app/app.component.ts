@@ -7,6 +7,7 @@ import { Animal } from './animal.model';
   <h1>Zoo</h1>
 
   <list-animal [childAnimalList]="masterAnimalList"></list-animal>
+  <edit-animal></edit-animal>
   `
 })
 
