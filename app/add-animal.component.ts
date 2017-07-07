@@ -7,40 +7,57 @@ import { Animal } from './animal.model';
   template: `
   <div *ngIf="childAddAnimal" class="Well">
     <h1>New Animal</h1>
-    <label>Species:</label>
-    <input #newSpecies>
-    <label>Name:</label>
-    <input #newName>
-    <label>Age:</label>
-    <input #newAge type="number">
-    <label>Location:</label>
-    <input #newLocation>
-    <label>Like:</label>
-    <input #newLikes>
-    <label>Dislike:</label>
-    <input #newDislikes>
+    <div class="form-group">
+      <label>Species:</label>
+      <input #newSpecies>
+    </div>
+    <div class="form-group">
+      <label>Name:</label>
+      <input #newName>
+    </div>
+    <div class="form-group">
+      <label>Age:</label>
+      <input #newAge type="number">
+    </div>
+    <div class="form-group">
+      <label>Location:</label>
+      <input #newLocation>
+    </div>
+    <div class="form-group">
+      <label>Like:</label>
+      <input #newLikes>
+    </div>
+    <div class="form-group">
+      <label>Dislike:</label>
+      <input #newDislikes>
+    </div>
+    <div class="form-group">
+      <label>Caretakers:</label>
+      <select #newCaretakers>
+        <option [value]="1"> 1 </option>
+        <option [value]="2"> 2 </option>
+        <option [value]="3"> 3 </option>
+        <option [value]="4"> 4 </option>
+        <option [value]="5"> 5 </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Diet:</label>
+      <select #newDiet>
+        <option> Carnivore </option>
+        <option> Herbivore </option>
+        <option> Omnivore </option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Sex:</label>
+      <select #newSex>
+        <option> Female </option>
+        <option> Male </option>
+      </select>
+    </div>
 
-    <label>Caretakers:</label>
-    <select #newCaretakers>
-      <option [value]="1"> 1 </option>
-      <option [value]="2"> 2 </option>
-      <option [value]="3"> 3 </option>
-      <option [value]="4"> 4 </option>
-      <option [value]="5"> 5 </option>
-    </select>
-    <label>Diet:</label>
-    <select #newDiet>
-      <option> Carnivore </option>
-      <option> Herbivore </option>
-      <option> Omnivore </option>
-    </select>
-    <label>Sex:</label>
-    <select #newSex>
-      <option> Female </option>
-      <option> Male </option>
-    </select>
-
-    <button (click)="sumbitForm(newSpecies.value, newName.value, newAge.value, newDiet.value, newLocation.value, newCaretakers.value, newSex.value, newLikes.value, newDislikes.value)">Done</button>
+    <button class="btn btn-success" (click)="sumbitForm(newSpecies.value, newName.value, newAge.value, newDiet.value, newLocation.value, newCaretakers.value, newSex.value, newLikes.value, newDislikes.value)">Done</button>
   </div>
   `
 })

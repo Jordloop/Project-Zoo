@@ -10,12 +10,13 @@ import { Animal } from './animal.model';
     <option value="young">Young</option>
     <option value="mature">Mature</option>
   </select>
-  <ul>
-  <li *ngFor="let currentAnimal of childAnimalList | age:filterByAge">{{currentAnimal.name}}, {{currentAnimal.species}}, {{currentAnimal.age}}, {{currentAnimal.diet}}, {{currentAnimal.location}}, {{currentAnimal.caretakers}}, {{currentAnimal.sex}}, {{currentAnimal.like}}, {{currentAnimal.dislike}}
-  <button (click)="editButtonClicked(currentAnimal)">Edit</button>
-  </li>
+  <ul class="list-group">
+    <li class="list-group-item"*ngFor="let currentAnimal of childAnimalList | age:filterByAge">
+    <p>{{currentAnimal.name}}, {{currentAnimal.species}}, {{currentAnimal.age}}, {{currentAnimal.diet}}, {{currentAnimal.location}}, {{currentAnimal.caretakers}}, {{currentAnimal.sex}}, {{currentAnimal.like}}, {{currentAnimal.dislike}}</p>
+    <button class="btn btn-info" (click)="editButtonClicked(currentAnimal)">Edit</button>
+    </li>
   </ul>
-  `
+`
 })
 
 export class ListAnimalComponent {

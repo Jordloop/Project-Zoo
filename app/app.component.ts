@@ -5,12 +5,11 @@ import { Animal } from './animal.model';
   selector: 'app-root',
   template: `
   <h1>Zoo</h1>
-
   <list-animal [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></list-animal>
   <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickSender)="finishedEditing()"></edit-animal>
   <add-animal [childAddAnimal]="selectedAddAnimal" (newAnimalSender)='addAnimal($event)'></add-animal>
 
-  <button (click)="addButtonClicked()">Add Animal</button>
+  <button class="btn btn-info" (click)="addButtonClicked()">Add Animal</button>
   `
 })
 
