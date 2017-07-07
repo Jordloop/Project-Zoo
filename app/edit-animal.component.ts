@@ -6,10 +6,16 @@ import { Animal } from './animal.model';
   template: `
   <div *ngIf="childSelectedAnimal" class="Well">
     <h1>EDIT</h1>
+    <button (click)="doneButtonClicked()">Done</button>
   </div>
 `
 })
 
 export class EditAnimalComponent {
-  @Input() childSelectedAnimal: Animal; 
+  @Input() childSelectedAnimal: Animal;
+  @Output() doneButtonClickSender = new EventEmitter();
+
+  doneButtonClicked() {
+    this.doneButtonClickSender.emit();
+  }
 }

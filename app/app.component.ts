@@ -7,7 +7,7 @@ import { Animal } from './animal.model';
   <h1>Zoo</h1>
 
   <list-animal [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></list-animal>
-  <edit-animal [childSelectedAnimal]="selectedAnimal"></edit-animal>
+  <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickSender)="finishedEditing()"></edit-animal>
   `
 })
 
@@ -23,6 +23,10 @@ masterAnimalList: Animal[] = [
 //Displays template from edit-animal.component.ts
 editAnimal(clickedAnimal) {
   this.selectedAnimal = clickedAnimal;
+}
+
+finishedEditing() {
+  this.selectedAnimal = null;
 }
 
 }
