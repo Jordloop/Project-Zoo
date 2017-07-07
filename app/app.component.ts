@@ -8,26 +8,40 @@ import { Animal } from './animal.model';
 
   <list-animal [childAnimalList]="masterAnimalList" (clickSender)="editAnimal($event)"></list-animal>
   <edit-animal [childSelectedAnimal]="selectedAnimal" (doneButtonClickSender)="finishedEditing()"></edit-animal>
+  <add-animal [childAddAnimal]="selectedAddAnimal" (doneAddButtonClicked)='addAnimal($event)'></add-animal>
+
+  <button (click)="addButtonClicked()">Add Animal</button>
   `
 })
 
 export class AppComponent {
 
-selectedAnimal: boolean = null;
+  masterAnimalList: Animal[] = [
+    new Animal('Cat', 'Wiskers', 4, 'Carnivore', 'Cat Island', "1", 'Male', 'Sleep', 'Dogs'),
+    new Animal('Monkey', 'Roger', 2, 'Omnivor', 'Monkey Tree', "1", 'Male', 'Playing', 'Loud Noises'),
+    new Animal('Shark', 'Rachel', 1, 'Carnivore', 'Shark Tank', "2", 'Female', 'Eating', 'Not eating')
+  ];
 
-masterAnimalList: Animal[] = [
-  new Animal('Cat', 'Wiskers', 4, 'Carnivore', 'Cat Island', 1, 'Male', 'Sleep', 'Dogs'),
-  new Animal('Monkey', 'Roger', 2, 'Omnivor', 'Monkey Tree', 1, 'Male', 'Playing', 'Loud Noises'),
-  new Animal('Shark', 'Rachel', 1, 'Carnivore', 'Shark Tank', 2, 'Female', 'Eating', 'Not eating')
-];
-//Displays template from edit-animal.component.ts
-editAnimal(clickedAnimal) {
-  this.selectedAnimal = clickedAnimal;
-}
+  selectedAnimal: boolean = null;
+  selectedAddAnimal: boolean = null;
 
-finishedEditing() {
-  this.selectedAnimal = null;
-}
+
+  addButtonClicked() {
+    this.selectedAddAnimal = true;
+  }
+
+  editAnimal(clickedAnimal) {
+    this.selectedAnimal = clickedAnimal;
+  }
+
+  finishedEditing() {
+    this.selectedAnimal = null;
+  }
+
+  addAnimal(newAnimalFromChild: Animal) {
+    this.masterAnimalList.push(newAnimalFromChild);
+    this.selectedAddAnimal = false;
+  }
 
 }
 // (public species: string, public name: string, public age: number, public diet: string, public location: string, public caretakers: number, public sex: string, public like: string, public dislike: string)
