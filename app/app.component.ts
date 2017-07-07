@@ -40,8 +40,10 @@ export class AppComponent {
 
   addAnimal(newAnimalFromChild: Animal) {
     this.masterAnimalList.push(newAnimalFromChild);
-    this.selectedAddAnimal = false;
+    this.selectedAddAnimal = null;
+    console.log(this.masterAnimalList);
   }
+
 
 }
 // (public species: string, public name: string, public age: number, public diet: string, public location: string, public caretakers: number, public sex: string, public like: string, public dislike: string)

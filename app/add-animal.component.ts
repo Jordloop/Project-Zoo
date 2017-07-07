@@ -6,7 +6,7 @@ import { Animal } from './animal.model';
   selector: 'add-animal',
   template: `
   <div *ngIf="childAddAnimal" class="Well">
-    <h1>ADD</h1>
+    <h1>New Animal</h1>
     <label>Species:</label>
     <input #newSpecies>
     <label>Name:</label>
@@ -22,28 +22,26 @@ import { Animal } from './animal.model';
 
     <label>Caretakers:</label>
     <select #newCaretakers>
-    <option [value]="1"> 1 </option>
-    <option [value]="2"> 2 </option>
-    <option [value]="3"> 3 </option>
-    <option [value]="4"> 4 </option>
-    <option [value]="5"> 5 </option>
+      <option [value]="1"> 1 </option>
+      <option [value]="2"> 2 </option>
+      <option [value]="3"> 3 </option>
+      <option [value]="4"> 4 </option>
+      <option [value]="5"> 5 </option>
     </select>
     <label>Diet:</label>
     <select #newDiet>
-     <option [value]="Carnivore"> Carnivore </option>
-     <option [value]="Herbivore"> Herbivore </option>
-     <option [value]="Omnivore"> Omnivore </option>
+      <option> Carnivore </option>
+      <option> Herbivore </option>
+      <option> Omnivore </option>
     </select>
     <label>Sex:</label>
     <select #newSex>
-     <option [value]="Femail"> Female </option>
-     <option [value]="Male"> Male </option>
+      <option> Female </option>
+      <option> Male </option>
     </select>
 
     <button (click)="sumbitForm(newSpecies.value, newName.value, newAge.value, newDiet.value, newLocation.value, newCaretakers.value, newSex.value, newLikes.value, newDislikes.value)">Done</button>
   </div>
-
-
   `
 })
 
