@@ -4,8 +4,9 @@ import { Animal } from './animal.model';
 @Component({
   selector: 'edit-animal',
   template: `
-  <h1>EDIT</h1>
-
+  <div *ngIf="childSelectedTask" class="Well">
+    <h1>EDIT</h1>
+  </div>
 `
 })
 
