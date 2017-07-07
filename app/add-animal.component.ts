@@ -9,27 +9,27 @@ import { Animal } from './animal.model';
     <h1>New Animal</h1>
     <div class="form-group">
       <label>Species:</label>
-      <input #newSpecies>
+      <input #newSpecies required>
     </div>
     <div class="form-group">
       <label>Name:</label>
-      <input #newName>
+      <input #newName required>
     </div>
     <div class="form-group">
       <label>Age:</label>
-      <input #newAge type="number">
+      <input #newAge type="number" required>
     </div>
     <div class="form-group">
       <label>Location:</label>
-      <input #newLocation>
+      <input #newLocation required>
     </div>
     <div class="form-group">
       <label>Like:</label>
-      <input #newLikes>
+      <input #newLikes required>
     </div>
     <div class="form-group">
       <label>Dislike:</label>
-      <input #newDislikes>
+      <input #newDislikes required>
     </div>
     <div class="form-group">
       <label>Caretakers:</label>

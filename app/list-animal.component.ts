@@ -5,15 +5,35 @@ import { Animal } from './animal.model';
 ({
   selector: 'list-animal',
   template: `
-  <select (change)="filterList($event.target.value)">
-    <option value="all">All</option>
-    <option value="young">Young</option>
-    <option value="mature">Mature</option>
-  </select>
+  <div class="form-group">
+    <select (change)="filterList($event.target.value)">
+      <option value="all">All</option>
+      <option value="young">Young</option>
+      <option value="mature">Mature</option>
+    </select>
+  </div>
   <ul class="list-group">
     <li class="list-group-item"*ngFor="let currentAnimal of childAnimalList | age:filterByAge">
-    <p>{{currentAnimal.name}}, {{currentAnimal.species}}, {{currentAnimal.age}}, {{currentAnimal.diet}}, {{currentAnimal.location}}, {{currentAnimal.caretakers}}, {{currentAnimal.sex}}, {{currentAnimal.like}}, {{currentAnimal.dislike}}</p>
-    <button class="btn btn-info" (click)="editButtonClicked(currentAnimal)">Edit</button>
+      <div class="row">
+        <div class="col-xs-6 col-md-3">
+          <ul>
+            <li>Name: {{currentAnimal.name}}</li>
+            <li>Species: {{currentAnimal.species}}</li>
+            <li>Age: {{currentAnimal.age}}</li>
+            <li>Diet: {{currentAnimal.diet}}</li>
+            <li>Location: {{currentAnimal.location}}</li>
+          </ul><br>
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <ul>
+            <li>Caretakers: {{currentAnimal.caretakers}}</li>
+            <li>Sex: {{currentAnimal.sex}}</li>
+            <li>Likes: {{currentAnimal.like}}</li>
+            <li>Dislikes: {{currentAnimal.dislike}}</li>
+          </ul>
+        </div>
+      </div>
+      <button class="btn btn-info" (click)="editButtonClicked(currentAnimal)">Edit</button>
     </li>
   </ul>
 `
