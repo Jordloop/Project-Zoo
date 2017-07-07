@@ -68,7 +68,6 @@ export class AddAnimalComponent {
 
   sumbitForm(species: string, name: string, age: number, diet: string, location: string, caretakers: string, sex: string, likes: string, dislikes: string) {
     var newAnimal: Animal = new Animal(species, name, age, diet, location, caretakers, sex, likes, dislikes);
-    console.log(newAnimal);
     this.newAnimalSender.emit(newAnimal);
   }
 }
