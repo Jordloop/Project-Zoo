@@ -6,8 +6,11 @@ import { Animal } from './animal.model';
   template: `
   <div *ngIf="childSelectedAnimal" class="Well">
     <h1>EDIT</h1>
+    <label>Enter Animal Name:</label>
+    <input [(ngModel)]=childSelectedAnimal.name>
     <button (click)="doneButtonClicked()">Done</button>
   </div>
+
 `
 })
 
